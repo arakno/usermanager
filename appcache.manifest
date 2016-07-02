@@ -1,0 +1,24 @@
+CACHE MANIFEST
+
+# version xxxxxxxxx
+
+CACHE:
+# html files
+index.html
+
+# css files
+
+
+# js files
+bundle.js
+https://cdn.polyfill.io/v2/polyfill.min.js
+
+
+# image files
+img/logo.png
+
+
+FALLBACK:
+
+NETWORK:
+*
