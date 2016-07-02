@@ -1,0 +1,40 @@
+/* MEDIA QUERIES
+========================== */
+//Mobile
+@media only screen and (min-width: 320px) {
+
+    .column {
+        .columns(1, 0); 
+    }
+}
+
+//Tablet
+@media only screen and (min-width: 480px) {
+
+    body {
+    .font-size(14);
+    }
+
+    .column {
+        .columns(2, 0); 
+    }
+
+    #logo {
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar-item {
+        display: inline-block!important;
+    }
+
+}
+
+//Desktop
+@media only screen and (min-width: 992px) {
+
+    body {
+        .font-size(18);
+    }
+
+}

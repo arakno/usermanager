@@ -1,0 +1,27 @@
+[
+    {
+        "id": 932,
+        "name": "mane",
+        "group": "Designers"
+    },
+    {
+        "id": 659,
+        "name": "jarbas",
+        "group": "Musicians"
+    },
+    {
+        "id": 676,
+        "name": "senhor",
+        "group": "Doctors"
+    },
+    {
+        "id": 37,
+        "name": "bek",
+        "group": "Teachers"
+    },
+    {
+        "id": 795,
+        "name": "Paulo",
+        "group": "Programmer"
+    }
+]

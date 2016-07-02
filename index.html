@@ -1,0 +1,175 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Internations</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="/dist/style.css">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="l-wrapper">
+
+    <header id="l-masthead">
+        <nav role="navigation" class="navbar">
+            <h1>
+                <a tabindex="0" id="logo" href="#/home"><img src="src/img/logo.png" alt="Home" />User Manager</a>
+            </h1>
+            <ul class="navbar-list">
+                <li tabindex="2" class="navbar-item"><a class="navbar-link" id="navbar-userlist" href="#/users">List Users</a></li>
+                <li tabindex="3" class="navbar-item"><a class="navbar-link" id="navbar-grouplist" href="#/groups">Group Manager</a></li>
+            </ul>
+        </nav>
+        <div id="usercount">0 </div>      
+    </header>
+
+    <main id="l-content">
+        <!-- User View -->
+        <div class="l-user hide"  tabindex="10">
+            <h2>Add users</h2>
+            <div id="user">
+            
+            </div>        
+        </div>
+
+        <!-- User List View -->
+        <div class="l-list hide">
+            <h2>List users</h2>
+            <table id="userlist" tabindex="25" width="100%" height="100%">
+
+            </table>
+            <button class="button" id="adduser-bt" title="Add User">Add User</button>
+        </div>
+
+        <!-- Group View -->
+        <div class="l-group hide" tabindex="30">
+            <h2>Add Group</h2>
+            <div id="group">
+            
+            </div>  
+        </div>
+
+        <!-- Goup List View -->
+        <div class="l-gmanager hide">
+            <h2>Manage Groups</h2>
+            <ul id="grouplist" tabindex="35">
+
+            </ul>
+            <button class="button" id="addgroup-bt" title="Add Group">Add Group</button>
+        </div>        
+    </main>
+    <footer id="l-mastfooter" tabindex="20">
+        <nav role="navigation" class="navbar">
+            <ul class="navbar-list bottom">
+                <li class="navbar-item"><a class="navbar-link" href="#/view1">Lorem ipsum</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="#/view1">Lorem ipsum</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</div>
+<!-- end wrapper -->
+
+
+<!-- MUSTACHE TEMPLATES -->
+
+<script type="text/html" id="usrlist_tmpl">
+  <tr>
+    <th>&nbsp;</th>
+    <th>Name</th>
+    <th>Group</th>
+    <th>&nbsp;</th>
+  </tr>
+       {{#entry}}
+           <tr data-id="{{id}}">
+               <td><img src="http://lorempixel.com/60/40" alt="user pic" /></td>
+                <td data-id="{{id}}">{{name}}</td>
+              <td>{{group}}</td>
+               <td>
+               <div class="actions">
+                    <button class="button delete" data-id="{{id}}" title="remove {{name}} ">X</button> 
+                </div></td>
+           </tr>
+        {{/entry}}
+        {{^entry}}
+           <tr>
+               <td colspan="4">No entries found. </td>
+           </tr>
+        {{/entry}}
+</script>
+
+
+<script type="text/html" id="grplist_tmpl">
+{{#entry}}
+    <li>{{.}}
+    <button class="button delete" title="remove {{.}}" data-name="{{.}}" >X</button>
+    </li>
+{{/entry}}
+{{^entry}}
+    <li>
+        <strong>No entries found.</strong>
+    </li>
+{{/entry}} 
+</script>
+
+
+<script type="text/html" id="addusr_tmpl">
+<fieldset>
+    <form>
+        <div>
+            <label for="name">Name: *</label>
+            <input type="text" required="required" id="name" name="firstName" pattern="^[a-zA-Z][a-zA-Z-\.]{1,20}" value="{{name}}" />
+        </div>       
+        <div>
+            <label for="groups">Group: *</label>
+            <select required="required" id="groups" name="groups">
+            {{#entry}}
+                <option>{{.}}</option>
+            {{/entry}}
+            {{^entry}}
+                <option>No groups available</option>
+            {{/entry}}
+            </select>
+        </div>   
+        <div>
+            <input id="submituser-bt" type="button" value="ADD USER" />
+        </div>
+    </form>
+</fieldset>
+</script>
+
+<script type="text/html" id="addgrp_tmpl">
+<fieldset>
+    <form>
+        <div>
+            <label for="name">Name: *</label>
+            <input type="text" required="required" id="groupname" name="groupname" pattern="^[a-zA-Z][a-zA-Z-\.]{1,20}" value="{{name}}" />
+        </div>       
+        <div>
+            <input id="submitgroup-bt" type="button" value="ADD GROUP" />
+        </div>
+    </form>
+</fieldset>
+</script>
+    <!-- END MUSTACHE TEMPLATES -->
+
+<script src="bundle.js"></script>
+
+</body>
+
+</html>

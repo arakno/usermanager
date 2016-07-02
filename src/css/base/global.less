@@ -1,0 +1,180 @@
+/*
+ * Rules applied to whole project (selection color, container sizes,…)
+ */
+
+@col_margin: 10;
+
+::-moz-selection {
+  background: @selection_color;
+  color: @selection_color_font;
+  text-shadow: none;
+}
+
+::selection {
+  background: @selection_color;
+  color: @selection_color_font;
+  text-shadow: none;
+}
+
+
+html {
+  text-align:center;
+  overflow-y:scroll;
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:none;
+  -moz-text-size-adjust:none;
+  -ms-text-size-adjust:none;
+  height: 100%;
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  font-size: 12;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #333;
+
+  .gradient-v(#ffffff, @grey);
+  
+}
+
+ul  {
+   margin: 0; padding: 0;
+
+  li {
+    display: list-item;
+    margin: 3px;
+  }
+}
+
+/* 
+//////////
+  LAYOUT 
+//////////*/
+.l-container {
+  position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block;
+    overflow: hidden;
+     }
+  
+  .l-content {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+  }
+
+
+  
+/* ==========================================================================
+  GRIDS - minigrid system mixin
+   ========================================================================== */
+.columns(@noOfColumns: 1, @col_margin: 10) {
+  float: left;
+  width: calc( 100% / @noOfColumns - @col_margin);
+  overflow: hidden;
+  // Prevent content from being difficult to read on larger displays */
+  // Give the content nested within the columns a little white space while not affecting the sizing of the columns and rows themselves */
+  .content {
+    max-width:450px;
+    padding:4%;
+  }
+  
+ }
+ 
+ 
+/* ==========================================================================
+  LINKS
+   ========================================================================== */
+
+a[href] {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  
+  &:hover {
+    border-color: transparent;
+  }
+
+}
+
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+
+/* Helper
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hide { display: none;}
+.show { display: block; }
+
+
+
+/* Print Styles =================================================== */
+/* AVOID HTTP REQUEST */
+@media print {  
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+}
+@page  {
+    margin: 0.5cm;
+}
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+}
+p {
+    orphans: 3;
+    widows: 3;
+}
+pre,
+blockquote {
+    border: 1px solid #808080;
+    page-break-inside: avoid;
+}
+abbr[title]:after {
+    content: " (" attr(title) ")";
+}
+a,
+a:visited {
+    text-decoration: underline;
+}
+a[href]:after {
+    content: " (" attr(href) ")";
+}
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+    content: "";
+}
+img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+}
+thead {
+    display: table-header-group;
+}
+tr {
+    page-break-inside: avoid;
+}
+}

@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <pbasto@arakno.net> -- <fullstack> -- <@arakno>
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    arakno dev
