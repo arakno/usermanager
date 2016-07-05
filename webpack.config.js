@@ -36,9 +36,15 @@ var config = {
         },
 		{ test: /\.css$/, loader: "style!css" },
 		{ test: /\.less$/, loader: "style!css!less" },
-		{ test: /\.png$/, loader: "url?limit=100000" },
-		{ test: /\.json$/, loader: 'json', includePaths}
+		{
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			loaders: [
+				'url?limit=8192',
+				'img'
 			]
+		},
+		{ test: /\.json$/, loader: 'json', includePaths}
+		]
     },
 	
     devtool: 'eval',

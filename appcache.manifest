@@ -15,7 +15,7 @@ https://cdn.polyfill.io/v2/polyfill.min.js
 
 
 # image files
-img/logo.png
+src/img/logo.png
 
 
 FALLBACK:

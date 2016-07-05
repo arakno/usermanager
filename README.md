@@ -1,6 +1,6 @@
 ## Internations Exercise synopsis
 
-It is far from perfect and I found 4 hours very limited, I took about the double amount of time to finish the project. 
+It is far from perfect and I found 4 hours very limited. I took about the double amount of time to finish the project. 
 I reckon using angular or other framework would have been easier/faster but not as much fun :)
 However, I am somewhat satisfied with the result. I haven't built anything as "big" with ES6 before, so it was a quite fun and learning experience.
 
@@ -10,6 +10,24 @@ Because I wanted to deliver in plain vanilla JS, it took more time. This and sca
 Having the tests setup to digest ES6 was also a challenge.
 
 Offline capabilities: Because it's an SPA, I have opted for a simple cache manifest file to give improve performance and offline capabilities 
+
+API Endpoints:
+/user
+/group
+
+Then using HTTP verbs we could:
+GET /user - Retrieve all users
+GET /user/xx - Retrieves a specific user
+POST /user/xx - Creates/Updates a new user
+DELETE /user/xx
+
+# Improvements
+There are several ways this app could improve, starting with 
+- data validation , filtering duplicates...
+- I would definitely use a template language for html, jade (now pug) or haml
+- In order to have multiple groups, the user class can be extended with a method which stores subscribed groups
+- Similarly, we could have group class to keep a register of all users subscribed to a specific group.
+
 
 ## Installation
 
@@ -50,6 +68,6 @@ npm run test
 
 Observe the terminal window
 
-##This was tested successfuly on Firefox and Chrome + Chrome Canary 
+**This was tested successfuly on Firefox and Chrome + Chrome Canary** 
 
 

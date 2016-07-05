@@ -77,7 +77,7 @@ describe('App exists', function(){
             expect(users.get().length, 1);
         }); 
 
-        it('user entry should correspond to input', function(){
+        it('group entry should correspond to input', function(){
             var gdata = groups.get();
             assert( gdata[0], 'Musicians');
         });  
